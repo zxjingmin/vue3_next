@@ -16,3 +16,4 @@ dist
 dist-ssr
 *.local
 yarn.lock
+__snapshots__
