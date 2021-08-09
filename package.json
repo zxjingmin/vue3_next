@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "vue": "^3.1.5",
-    "vue-router": "^4.0.10",
+    "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
@@ -17,6 +17,7 @@
     "@babel/preset-env": "7.15.0",
     "@babel/preset-typescript": "^7.15.0",
     "@babel/standalone": "7.15.2",
+    "@prettier/plugin-pug": "^1.16.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -30,9 +31,12 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-pug": "^1.2.3",
     "eslint-plugin-vue": "^7.15.1",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
+    "prettier-eslint": "^13.0.0",
+    "prettier-eslint-cli": "^5.0.1",
     "pug": "^3.0.2",
     "sass": "^1.37.5",
     "ts-jest": "^27.0.4",
