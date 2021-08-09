@@ -5,7 +5,7 @@ export interface UserStateType {
 }
 
 const initState: UserStateType = {
-  count: 1314,
+  count: 520,
 };
 export interface StoreModuleType<S> extends Module<S, S> {
   namespaced: true;

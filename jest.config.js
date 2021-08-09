@@ -2,7 +2,7 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:44
  * @Last Modified by: 邵明
- * @Last Modified time: 2021-08-09 11:52:01
+ * @Last Modified time: 2021-08-09 16:19:02
  */
 const path = require('path');
 
@@ -11,6 +11,8 @@ module.exports = {
   clearMocks: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.{js,vue}'],
   // 告诉Jest需要匹配的文件后缀
   moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   // 别名设置
