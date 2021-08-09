@@ -2,7 +2,7 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:44
  * @Last Modified by: 邵明
- * @Last Modified time: 2021-08-08 21:41:08
+ * @Last Modified time: 2021-08-09 11:52:01
  */
 const path = require('path');
 
@@ -17,16 +17,16 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-  preset: 'ts-jest',
+  preset: 'vite-jest',
   testEnvironment: 'jsdom',
   // 匹配哪些文件进行测试
-  testMatch: ['**/tests/unit/**/*.spec.ts?(x)'],
+  testMatch: ['**/tests/unit/**/*.spec.ts?(x)', '**/__test__/**/*.spec.ts?(x)'],
   // 不进行匹配的目录
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   // 匹配到 .vue 文件的时候用 vue-jest处理， 匹配到.js文件的时候用 babel-jest 处理
   transform: {
     '^.+\\.vue$': 'vue3-jest',
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': 'babel-jest',
     '^.+\\.js$': 'babel-jest',
   },
 };

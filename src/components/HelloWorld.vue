@@ -9,7 +9,7 @@
   const store = useStore();
 
   const count = computed(() => {
-    return store.state.count;
+    return store.state.user.count;
   });
 </script>
 
