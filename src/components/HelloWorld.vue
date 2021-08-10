@@ -1,5 +1,5 @@
 <template lang="pug">
-.hello(about='222', data-id='333') hello "{{ count }}"
+.hello {{ count }}
 </template>
 
 <script lang="ts" setup>

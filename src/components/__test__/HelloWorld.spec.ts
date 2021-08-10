@@ -2,7 +2,7 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:16
  * @Last Modified by: 邵明
- * @Last Modified time: 2021-08-09 12:32:09
+ * @Last Modified time: 2021-08-15 14:39:24
  */
 import { mount } from '@vue/test-utils';
 import HelloWorld from '@/components/HelloWorld.vue';
@@ -15,6 +15,7 @@ describe('HelloWorld.vue test', () => {
         plugins: [store],
       },
     });
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.text()).toContain('520');
+    // expect(wrapper.html()).toMatchSnapshot();
   });
 });

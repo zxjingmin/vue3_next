@@ -1,8 +1,8 @@
 <template lang="pug">
-HelloWorld(msg='Hello Vue 3 + TypeScript + Vite')
+hello-world
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import HelloWorld from '@/components/HelloWorld.vue';
 </script>
 

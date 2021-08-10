@@ -18,3 +18,4 @@ dist-ssr
 yarn.lock
 __snapshots__
 coverage
+yarn-error.log
