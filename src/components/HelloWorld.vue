@@ -1,5 +1,6 @@
 <template lang="pug">
 .hello {{ count }}
+n-button Submit
 </template>
 
 <script lang="ts" setup>

@@ -2,20 +2,35 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:16
  * @Last Modified by: 邵明
- * @Last Modified time: 2021-08-15 14:39:24
+ * @Last Modified time: 2021-08-21 12:09:35
  */
 import { mount } from '@vue/test-utils';
 import HelloWorld from '@/components/HelloWorld.vue';
 import store from '@/store/index';
+import naiv from '@/libaray/naive';
 
 describe('HelloWorld.vue test', () => {
   test('HelloWorld components and store', async () => {
     const wrapper = await mount(HelloWorld, {
       global: {
-        plugins: [store],
+        plugins: [store, naiv],
       },
     });
-    expect(wrapper.text()).toContain('520');
-    // expect(wrapper.html()).toMatchSnapshot();
+    // expect(wrapper.find('.hello').html()).toContain('520');
+
+    expect(wrapper.find('.hello').text()).toContain('520');
   });
+
+  test('HelloWorld components and navie button', async () => {
+    const wrapper = await mount(HelloWorld, {
+      global: {
+        plugins: [store, naiv],
+      },
+    });
+    // expect(wrapper.find('.hello').html()).toContain('520');
+    // expect(wrapper.findComponent('.n-button').text()).toContain('Submit');
+    expect(wrapper.findComponent('.n-button').exists()).toBe(true);
+    expect(wrapper.findComponent('.n-button').isVisible()).toBe(true);
+  });
+  // });
 });
