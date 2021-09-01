@@ -29,8 +29,8 @@ describe('HelloWorld.vue test', () => {
     });
     // expect(wrapper.find('.hello').html()).toContain('520');
     // expect(wrapper.findComponent('.n-button').text()).toContain('Submit');
-    expect(wrapper.findComponent('.n-button').exists()).toBe(true);
-    expect(wrapper.findComponent('.n-button').isVisible()).toBe(true);
+    expect(wrapper.find('.n-button').exists()).toBe(true);
+    expect(wrapper.find('.n-button').isVisible()).toBe(true);
   });
   // });
 });
