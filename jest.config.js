@@ -2,13 +2,14 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:44
  * @Last Modified by: 邵明
- * @Last Modified time: 2021-08-29 18:04:37
+ * @Last Modified time: 2021-09-03 18:43:45
  */
 const path = require('path');
 
 module.exports = {
   rootDir: path.resolve(__dirname),
   clearMocks: true,
+  // setupFilesAfterEnv: ['jest-allure/dist/setup'],
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   collectCoverage: true,

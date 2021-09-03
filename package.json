@@ -8,15 +8,16 @@
     "test:unit": "jest --detectOpenHandles"
   },
   "dependencies": {
+    "naive-ui": "^2.17.0",
     "vue": "^3.2.8",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/core": "7.15.4",
+    "@babel/core": "7.15.5",
     "@babel/preset-env": "7.15.4",
     "@babel/preset-typescript": "^7.15.0",
-    "@babel/standalone": "7.15.4",
+    "@babel/standalone": "7.15.5",
     "@prettier/plugin-pug": "^1.16.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@types/jest": "^27.0.1",
@@ -34,7 +35,7 @@
     "eslint-plugin-pug": "^1.2.4",
     "eslint-plugin-vue": "^7.17.0",
     "jest": "^27.1.0",
-    "naive-ui": "^2.16.7",
+    "jest-allure": "^0.1.3",
     "prettier": "^2.3.2",
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1",
