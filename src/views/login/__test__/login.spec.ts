@@ -6,13 +6,13 @@
  */
 import { mount } from '@vue/test-utils';
 import Login from '../login.vue';
-import naiv from '@/libaray/naive';
+import elementPlus from 'element-plus';
 
 describe('Login.vue test', () => {
   test('Login componente', async () => {
     const wrapper = await mount(Login, {
       global: {
-        plugins: [naiv],
+        plugins: [elementPlus],
       },
     });
 

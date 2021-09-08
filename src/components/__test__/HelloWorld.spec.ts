@@ -7,13 +7,13 @@
 import { mount } from '@vue/test-utils';
 import HelloWorld from '@/components/HelloWorld.vue';
 import store from '@/store/index';
-import naiv from '@/libaray/naive';
+import elementPlus from 'element-plus';
 
 describe('HelloWorld.vue test', () => {
   test('HelloWorld components and store', async () => {
     const wrapper = await mount(HelloWorld, {
       global: {
-        plugins: [store, naiv],
+        plugins: [store, elementPlus],
       },
     });
     // expect(wrapper.find('.hello').html()).toContain('520');
@@ -24,13 +24,13 @@ describe('HelloWorld.vue test', () => {
   test('HelloWorld components and navie button', async () => {
     const wrapper = await mount(HelloWorld, {
       global: {
-        plugins: [store, naiv],
+        plugins: [store, elementPlus],
       },
     });
     // expect(wrapper.find('.hello').html()).toContain('520');
     // expect(wrapper.findComponent('.n-button').text()).toContain('Submit');
-    expect(wrapper.find('.n-button').exists()).toBe(true);
-    expect(wrapper.find('.n-button').isVisible()).toBe(true);
+    expect(wrapper.find('.el-button').exists()).toBe(true);
+    expect(wrapper.find('.el-button').isVisible()).toBe(true);
   });
   // });
 });

@@ -19,7 +19,7 @@ pipeline {
 
             }
         }
-        stage('install test') {
+        stage('unit test') {
             steps{
               sh 'yarn test:unit'
 

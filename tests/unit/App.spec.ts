@@ -7,15 +7,16 @@
 import { mount } from '@vue/test-utils';
 import app from '@/App.vue';
 import store from '@/store/';
-import naiv from '@/libaray/naive';
+import elementPlus from 'element-plus';
 
 describe('App.vue test', () => {
   test('App loading test', async () => {
     const wrapper = await mount(app, {
       global: {
-        plugins: [store, naiv],
+        plugins: [store, elementPlus],
       },
     });
     expect(wrapper.find('.hello').html()).toContain('520');
+    // expect(wrapper.html()).toMatchSnapshot();
   });
 });
