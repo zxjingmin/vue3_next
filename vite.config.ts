@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
-
+import viteCompression from 'vite-plugin-compression';
 import VitePluginElementPlus from 'vite-plugin-element-plus';
 
 const port = 3000;
@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => {
         // useSource: true
         format: mode === 'development' ? 'esm' : 'cjs',
       }),
+      viteCompression(),
     ],
   };
 });
