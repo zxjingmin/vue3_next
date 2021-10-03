@@ -10,7 +10,7 @@ pipeline {
             steps{
                 git credentialsId: 'c5e7ee35-441a-4b0d-985c-7599231173cf',
                 branch: "${branch}",
-                url: 'git@192.168.0.12:study/study_vite_vue3.git'
+                url: 'git@192.168.0.6:study/study_vite_vue3.git'
             }
         }
         stage('installpackage') {

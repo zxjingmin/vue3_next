@@ -1,11 +1,13 @@
 module.exports = {
   parser: 'vue-eslint-parser',
+
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
+    parser:'@typescript-eslint/parser',
   },
   extends: [
     'plugin:vue/base',
@@ -14,6 +16,7 @@ module.exports = {
     'plugin:vue/vue3-strongly-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'vue-global-api',
   ],
   globals: {
     defineProps: 'readonly',

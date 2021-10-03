@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
-import viteCompression from 'vite-plugin-compression';
-import VitePluginElementPlus from 'vite-plugin-element-plus';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import ElementPlus from 'unplugin-element-plus/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 const port = 3000;
 
@@ -14,16 +16,26 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/styles/variables.scss" as *;\n',
+        },
+      },
+    },
+
     plugins: [
       vue(),
-      VitePluginElementPlus({
-        // 如果你需要使用 [component name].scss 源文件，你需要把下面的注释取消掉。
-        // 对于所有的 API 你可以参考 https://github.com/element-plus/vite-plugin-element-plus
-        // 的文档注释
-        // useSource: true
-        format: mode === 'development' ? 'esm' : 'cjs',
+      AutoImport({
+        imports: ['vue', 'vuex', 'vue-router'],
+        resolvers: [ElementPlusResolver()],
+        dts: 'src/auto-imports.d.ts',
       }),
-      viteCompression(),
+      ElementPlus(),
+      Components({
+        resolvers: [ElementPlusResolver()],
+        dts: 'src/components.d.ts',
+      }),
     ],
   };
 });

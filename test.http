@@ -1,0 +1,27 @@
+@baseUrl = http://192.168.0.1:8080/
+
+### 用户登录
+# @name login
+POST {{baseUrl}}login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"Abc465"
+}
+
+@authToken = {{login.response.body.data.value}}
+@UserId ={{login.response.body.data.additionalInformation.user_info.id}}
+
+###
+# @name userInfo
+GET {{baseUrl}}user/{{UserId}} HTTP/1.1
+Authorization: Bearer {{authToken}}
+
+@UserName = {{userInfo.response.body.data.username}}
+
+
+###
+GET {{baseUrl}}user/byName/{{UserName}}
+Authorization: Bearer {{authToken}}
+

@@ -1,11 +1,9 @@
 <template lang="pug">
-hello-world
-Login
+router-view 
 </template>
 
 <script setup lang="ts">
-  import HelloWorld from '@/components/HelloWorld.vue';
-  import Login from '@/views/login/login.vue';
 </script>
 
-<style></style>
+<style>
+</style>

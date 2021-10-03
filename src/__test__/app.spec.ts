@@ -2,24 +2,21 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:16
  * @Last Modified by: 邵明
- * @Last Modified time: 2022-01-29 13:21:15
+ * @Last Modified time: 2022-02-03 18:47:03
  */
 import { mount } from '@vue/test-utils';
-import Login from '../login.vue';
+import App from '@/App.vue';
 import store from '@/store/index';
+import router from '@/router/index';
 import elementPlus from 'element-plus';
 
 describe('Login.vue test', () => {
   test('Login component', async () => {
-    const wrapper = await mount(Login, {
+    const wrapper = await mount(App, {
       global: {
-        plugins: [elementPlus, store],
+        plugins: [elementPlus, store, router()],
       },
     });
-
-    expect(wrapper.find('form').exists()).toBe(true);
     // expect(wrapper.html()).toMatchSnapshot();
   });
-
-  // });
 });

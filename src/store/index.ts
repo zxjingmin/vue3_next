@@ -1,15 +1,18 @@
-import { createStore, Module, ModuleTree } from 'vuex';
+import { createStore, ModuleTree } from 'vuex';
 
 function importAllStore<S>() {
   const modules: ModuleTree<S> = {};
-  const requireModules = import.meta.globEager('../store/*.store.ts');
-  for (const path in requireModules) {
-    const modulesConent = requireModules[path];
-    if (modulesConent.default) {
-      const { name, ...module } = modulesConent.default;
-      // 获取 PascalCase 命名
-      const modulesName = name || path.replace(/^\.\/(.*)\.store\.ts$/, '$1');
+  const requireModules = import.meta.globEager('./modules/*.store.ts');
+  // console.log(requireModules);
 
+  for (const path in requireModules) {
+    const modulesContent = requireModules[path];
+    if (modulesContent.default) {
+      const { name, ...module } = modulesContent.default;
+      // 获取 PascalCase 命名
+      // console.log(path.replace(/(.*)\/(.*)\.store\.ts$/, '$2'));
+      const modulesName = name || path.replace(/^\.\/(.*)\.store\.ts$/, '$1');
+      // console.log(modulesName);
       modules[modulesName] = { ...module };
     }
   }

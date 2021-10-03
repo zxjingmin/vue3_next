@@ -16,20 +16,11 @@ export interface UserModuleType extends StoreModuleType<UserStateType> {
   namespaced: true;
   name: 'user';
   state: UserStateType;
-}
+  getters: {
+    count: (state: UserStateType) => number;
 
-const user = createStore({
-  state() {
-    return {
-      count: 100000,
-    };
-  },
-  mutations: {
-    increment(state: any) {
-      state.count += 1;
-    },
-  },
-});
+  };
+}
 
 const userStoreModel: UserModuleType = {
   namespaced: true,
@@ -37,6 +28,13 @@ const userStoreModel: UserModuleType = {
   state: {
     ...initState,
   },
+  getters: {
+    count(state: UserStateType): number {
+      return state.count;
+    },
+
+  },
+
 };
 
 export default userStoreModel;
