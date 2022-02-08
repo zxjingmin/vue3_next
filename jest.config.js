@@ -2,7 +2,7 @@
  * @Author: 邵明
  * @Date: 2021-02-16 22:05:44
  * @Last Modified by: 邵明
- * @Last Modified time: 2022-01-29 14:24:15
+ * @Last Modified time: 2022-02-15 18:00:20
  */
 const path = require('path');
 
@@ -30,7 +30,7 @@ module.exports = {
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   // 匹配到 .vue 文件的时候用 vue-jest处理， 匹配到.js文件的时候用 babel-jest 处理
   transform: {
-    '^.+\\.vue$': 'vue3-jest',
+    '^.+\\.vue$': '@vue/vue3-jest',
     '^.+\\.ts$': 'babel-jest',
     '^.+\\.js$': 'babel-jest',
   },
