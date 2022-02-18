@@ -1,10 +1,11 @@
 <template lang="pug">
 .centerContainer
-  el-form(ref='loginForm', :model='editData')
+  div.show {{ editData.username }}
+  el-form(ref='loginForm', :model='editData' :label-width="80")
     el-form-item(path='username', label='用户名:')
-      el-input(v-model:value='editData.username')
+      el-input(v-model='editData.username')
     el-form-item(path='password', label='密码:')
-      el-input(v-model:value='editData.password')
+      el-input(v-model='editData.password')
 </template>
 
 <script lang="ts" setup>
