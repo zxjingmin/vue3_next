@@ -9,9 +9,26 @@ import viteCompression from 'vite-plugin-compression';
 
 const port = 3000;
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
+  const port: number = parseInt(process.env.APP_PORT || '8000');
+  const plugins = [
+    vue(),
+    AutoImport({
+      imports: ['vue', 'vuex', 'vue-router'],
+      resolvers: [ElementPlusResolver()],
+      dts: 'src/auto-imports.d.ts',
+    }),
+    ElementPlus(),
+    Components({
+      resolvers: [ElementPlusResolver()],
+      dts: 'src/components.d.ts',
+    }),
+  ];
+
+  command === 'build' && plugins.push(viteCompression({ threshold: 5000, verbose: false }));
   return {
     base: '/',
+    plugins,
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
@@ -24,20 +41,20 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-
-    plugins: [
-      vue(),
-      AutoImport({
-        imports: ['vue', 'vuex', 'vue-router'],
-        resolvers: [ElementPlusResolver()],
-        dts: 'src/auto-imports.d.ts',
-      }),
-      ElementPlus(),
-      Components({
-        resolvers: [ElementPlusResolver()],
-        dts: 'src/components.d.ts',
-      }),
-      viteCompression({ threshold: 5000, verbose: false }),
-    ],
+    server: {
+      hostname: 'localhost',
+      base: '/',
+      port: port,
+      host: 'localhost',
+      open: true,
+      proxy: {
+        '/api/': {
+          target: 'http://192.168.0.1x`:8080/',
+          // target: 'http://localhost:8080/',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
+    },
   };
 });

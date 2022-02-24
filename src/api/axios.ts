@@ -1,13 +1,12 @@
 /*
- * @Author: 邵明 
- * @Date: 2022-02-02 16:32:29 
+ * @Author: 邵明
+ * @Date: 2022-02-02 16:32:29
  * @Last Modified by: 邵明
  * @Last Modified time: 2022-02-03 12:51:15
  */
 
 import axios, { AxiosRequestConfig, AxiosStatic } from 'axios';
 export default (): AxiosStatic => {
- 
   axios.defaults.validateStatus = function (status: number) {
     return (
       (status >= 200 && status < 300) ||
@@ -20,10 +19,8 @@ export default (): AxiosStatic => {
 
   axios.interceptors.request.use(
     function (config: AxiosRequestConfig): AxiosRequestConfig {
-      
-      
-      config.baseURL = 'http://192.168.0.1:8080/';
-      console.log('config.baseURL:'+config.baseURL );
+      config.baseURL = '/api/';
+      axios.defaults.withCredentials = false;
       return config;
     },
     function (error) {
@@ -32,16 +29,16 @@ export default (): AxiosStatic => {
   );
 
   axios.interceptors.response.use(
-    response => {
-      console.log('request success');
-      
-      if(response.status == 200 && response.data.success) {
+    (response) => {
+      console.log('request success' + JSON.stringify(response));
+
+      if (response.status == 200 && response.data.success) {
         return Promise.resolve(response.data.data);
       }
-      
-      
     },
-    error=> {console.log('network fail');}
+    (error) => {
+      console.log('network fail');
+    }
   );
   return axios;
 };
