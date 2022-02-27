@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 
 /*
@@ -29,6 +30,7 @@ import axios from 'axios';
     "value":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU2NzI2MDMsInVzZXJuYW1lIjoiOWUwM2Q5Y2JjZTRiNzAxNGU3NWJlNjQyNjZjM2E4NDEiLCJ0b2tlbiI6IjUwMDcyOTFjYjM0NzRmMDdiOTE3ZmFjMGZhY2JjNzgzIn0.egM67L5rhgkS9Ytrs4t49ry_NoSPz-WGzLiY3AaFBeg","expiration":"1645672603614"
   }
 */
+
 export const login = (username: string, password: string): Promise<any> => {
   return axios.post('login', { username, password });
 };

@@ -4,9 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    DynamicForm: typeof import('./components/dynamic/DynamicForm.vue')['default']
-    Show: typeof import('./components/Show.vue')['default']
+    DynamicForm: typeof import('./components/dynamic/DynamicForm.vue')['default'];
+    ElButton: typeof import('element-plus/es')['ElButton'];
+    Show: typeof import('./components/Show.vue')['default'];
   }
 }
 
-export { }
+export {};

@@ -1,13 +1,12 @@
 module.exports = {
   parser: 'vue-eslint-parser',
-
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
-    parser:'@typescript-eslint/parser',
+    parser: '@typescript-eslint/parser',
   },
   extends: [
     'plugin:vue/base',
@@ -42,14 +41,6 @@ module.exports = {
     'comma-spacing': [2, { before: false, after: true }],
     'comma-style': [2, 'last'],
     semi: [2, 'always'],
-    // 'no-use-before-define': [
-    //   'error',
-    //   {
-    //     functions: false,
-    //     classes: true,
-    //   },
-    // ],
-
     quotes: ['error', 'single'],
     // '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-unused-vars': 'off',

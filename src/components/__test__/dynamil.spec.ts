@@ -23,10 +23,8 @@ const formItem: FormItemType[] = [
     type: 'select',
     list: ['上海', '天津', '湖北'],
   },
-
 ];
 describe('Dynamic.vue test', () => {
-  
   test('test ', async () => {
     const wrapper = await mount(DynamicForm, {
       global: {
@@ -39,4 +37,3 @@ describe('Dynamic.vue test', () => {
     await wrapper.find('button').trigger('click');
   });
 });
-

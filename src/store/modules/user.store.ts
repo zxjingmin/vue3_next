@@ -18,7 +18,6 @@ export interface UserModuleType extends StoreModuleType<UserStateType> {
   state: UserStateType;
   getters: {
     count: (state: UserStateType) => number;
-
   };
 }
 
@@ -32,9 +31,7 @@ const userStoreModel: UserModuleType = {
     count(state: UserStateType): number {
       return state.count;
     },
-
   },
-
 };
 
 export default userStoreModel;

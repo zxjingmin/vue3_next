@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
  * @Author: 邵明
  * @Date: 2022-02-03 16:27:45
  * @Last Modified by: 邵明
- * @Last Modified time: 2022-02-03 18:40:07
+ * @Last Modified time: 2022-02-27 13:21:40
  */
 
 import { createRouter, createWebHistory, Router } from 'vue-router';
