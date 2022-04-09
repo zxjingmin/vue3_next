@@ -1,3 +1,16 @@
 {
-  "cSpell.words": ["jingmin", "vuex"]
+  "cSpell.words": [
+    "jingmin",
+    "languageservice",
+    "mockjs",
+    "unplugin",
+    "vfonts",
+    "Vite",
+    "vitejs",
+    "vuedx",
+    "vuex"
+  ],
+  "compile-hero.disable-compile-files-on-did-save-code": false,
+  "cSpell.enableFiletypes": ["typescript"],
+  "browse-lite.chromeExecutable": "/opt/google/chrome/chrome"
 }

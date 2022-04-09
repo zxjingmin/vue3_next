@@ -1,5 +1,6 @@
 <template lang="pug">
 .centerContainer
+  div {{ count }}
   el-form(ref='loginForm', :model='editData', :label-width='80')
     el-form-item(path='username', label='用户名:')
       el-input(v-model='editData.username')
@@ -9,7 +10,7 @@
       el-button(@click='handleSubmit', type='primary') 提交
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="ShowPage">
   import { reactive, ref, computed } from '@vue/runtime-core';
   import { useStore } from 'vuex';
 

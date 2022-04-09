@@ -1,9 +1,9 @@
 <template lang="pug">
-router-view
+div
+  router-link(to='/login') login
+  router-view
 </template>
 
-<script setup lang="ts">
-  import { ref } from 'vue';
-</script>
+<script setup lang="ts"></script>
 
 <style></style>
