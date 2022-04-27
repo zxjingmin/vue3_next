@@ -5,7 +5,7 @@
  * @Last Modified time: 2022-01-29 13:21:15
  */
 import { mount } from '@vue/test-utils';
-import Login from '../login.vue';
+import Login from '../LoginPage.vue';
 import store from '@/store/index';
 import elementPlus from 'element-plus';
 

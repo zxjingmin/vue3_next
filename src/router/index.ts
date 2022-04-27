@@ -26,7 +26,7 @@ const routes: RoutesDataItem[] = [
     meta: {
       requiresAuth: false,
     },
-    component: () => import('@/views/login/login.vue'),
+    component: () => import('@/views/login/LoginPage.vue'),
   },
 ];
 
